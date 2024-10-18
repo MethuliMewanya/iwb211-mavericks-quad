@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Toppings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <form action="http://localhost:8080/selections" method="post">
+                <h1 class="flavour-title" id="flav">Flavours</h1>
+                <div class="row mt-4">
+                        <div class="col-4 col-md-3 mb-4"  id="flavour-container">
+                                <img src="./images/flavours/c.jpg" alt="Chocolate" class="circle-img">
+                                <p class="p-p">Chocolate</p>
+                                <p class="p-p">Rs 200/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span>
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/v.jpeg" alt="Vanila" class="circle-img">
+                                <p class="p-p">Vanila</p>
+                                <p class="p-p">Rs 200/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span> 
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/s.jpeg" alt="Strawberry" class="circle-img">
+                                <p class="p-p">Strawberry</p>
+                                <p class="p-p">Rs 250/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span> 
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/mc.jpg" alt="Mint Chocolate Chip" class="circle-img">
+                                <p class="p-p">Mint Chocolate Chip</p>
+                                <p class="p-p">Rs 250/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span> 
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/cc.jpg" alt="Cookies n' Cream" class="circle-img">
+                                <p class="p-p">Cookies n' Cream</p>
+                                <p class="p-p">Rs 250/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span>
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/bs.jpg" alt="Butterscotch" class="circle-img">
+                                <p class="p-p">Butterscotch</p>
+                                <p class="p-p">Rs 250/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span> 
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/sc.jpeg" alt="Strawberry Cheesecake" class="circle-img">
+                                <p class="p-p">Strawberry Cheesecake</p>
+                                <p class="p-p">Rs 250/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span>
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4" id="flavour-container">
+                                <img src="./images/flavours/rr.jpg" alt="Rum Raisin" class="circle-img">
+                                <p class="p-p">Rum Raisin</p>
+                                <p class="p-p">Rs 250/scoop</p>
+                                <div class="custom-button">
+                                        <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 13H5v-2h14v2z"></path>
+                                        </svg>
+                                        <span class="counter">0</span> 
+                                        <svg onclick="increaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
+                                        </svg>
+                                </div>
+                        </div>
+                </div>
+                <br><br><br>
+                <h1 class="flavour-title" id="topp">Toppings</h1>
+                <div class="row mt-4">
+                        <div class="col-4 col-md-3 mb-4">      
+                                <img src="./images/toppings/sp.jpeg" alt="Sprinkles" class="circle-img">
+                                <p class="p-p">Sprinkles</p>
+                                <p class="p-p">Rs 50</p>
+                                <input type="checkbox" id="Sprinkles" name="topping[]" value="Sprinkles">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>      
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">    
+                                <img src="./images/toppings/hot.jpg" alt="Hot Fudge" class="circle-img">
+                                <p class="p-p">Hot Fudge</p>
+                                <p class="p-p">Rs 50</p>
+                                <input type="checkbox" id="Hot Fudge" name="topping[]" value="Hot Fudge">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>      
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">   
+                                <img src="./images/toppings/ch.jpeg" alt="Maraschino Cherries" class="circle-img">
+                                <p class="p-p">Maraschino Cherries</p>
+                                <p class="p-p">Rs 50</p>
+                                <input type="checkbox" id="Maraschino Cherries" name="topping[]" value="Maraschino Cherries">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>    
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">
+                                <img src="./images/toppings/wh.jpeg" alt="Whipped Cream" class="circle-img">
+                                <p class="p-p">Whipped Cream</p>
+                                <p class="p-p">Rs 50</p>
+                                <input type="checkbox" id="Whipped Cream" name="topping[]" value="Whipped Cream">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>    
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">   
+                                <img src="./images/toppings/nuts.jpg" alt="Crushed Nuts" class="circle-img">
+                                <p class="p-p">Crushed Nuts</p>
+                                <p class="p-p">Rs 50</p>
+                                <input type="checkbox" id="Crushed Nuts" name="topping[]" value="Crushed Nuts">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>   
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">
+                                <img src="./images/toppings/oreo.jpg" alt="Crushed Oreo" class="circle-img">
+                                <p class="p-p">Crushed Oreo</p>
+                                <p class="p-p">Rs 70</p>
+                                <input type="checkbox" id="Crushed Oreo" name="topping[]" value="Crushed Oreo">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>  
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">  
+                                <img src="./images/toppings/brownie.jpg" alt="Brownie Bites" class="circle-img">
+                                <p class="p-p">Brownie Bites</p>
+                                <p class="p-p">Rs 100</p>
+                                <input type="checkbox" id="Brownie Bites" name="topping[]" value="Brownie Bites">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>
+                        </div>
+                        <div class="col-4 col-md-3 mb-4">
+                                <img src="./images/toppings/gummy.jpg" alt="Gummy Bears" class="circle-img">
+                                <p class="p-p">Gummy Bears</p>
+                                <p class="p-p">Rs 50</p>
+                                <input type="checkbox" id="Gummy Bears" name="topping[]" value="Gummy Bears">
+                                <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>
+                        </div>
+                </div>
+        </form>
+        <div class="d-flex justify-content-between mt-4" id="button-group">
+                <a href="home.html"><button class="btn btn-danger m-2">← Home</button></a>
+                <a href="toppings.html#flav"><button class="btn btn-danger m-2">Cart</button></a>
+        </div>
+   </div>
+
+   <script>
+        function increaseValue(element) {
+            let counter = element.parentElement.querySelector(".counter");
+            let currentValue = parseInt(counter.textContent);
+            if(currentValue < 10){
+                counter.textContent = currentValue + 1;
+            }
+        }
+
+        function decreaseValue(element) {
+            let counter = element.parentElement.querySelector(".counter");
+            let currentValue = parseInt(counter.textContent);
+            if(currentValue > 0){
+                counter.textContent = currentValue - 1;
+            }   
+        }
+    </script>
+</body>
+</html>

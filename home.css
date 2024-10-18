@@ -1,0 +1,92 @@
+body {
+    background-image: url('images/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.header {
+    margin-top: 0px;
+}
+
+.title {
+    font-size: 50px;
+    font-family: cursive;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.line-1{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    padding-top: 20px;
+    justify-content: center;
+    color: #fff;
+}
+
+.button-group .btn {
+    width: 150px;
+    font-size: 18px;
+    border-radius: 25px; 
+    color: #fff; 
+    background-color: transparent; 
+    border-color: #fff; 
+    outline: none;
+}
+
+.btn:hover {
+    color: white; 
+    background-color: rgb(233, 60, 89); 
+    border-color: rgb(163, 33, 55); 
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+.info-section {
+    margin-top: 40px;
+}
+
+.ice-cream-img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: 500;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    justify-content: center;
+    color: #fff;
+}
+
+.video-container {
+    position: relative;
+    display: inline-block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: transparent; /* Transparent background for play button */
+}
+
+.play-icon {
+    width: 50px; /* Adjust size as needed */
+}
+
+.footer {
+    margin-top: 2px;
+    font-family: cursive;
+    color: #fff;
+}
