@@ -66,7 +66,7 @@ if (isset($_GET["action"])) {
 <body>
         <div class="header" id="myHeader">
                 <div class="d-flex justify-content-between mt-4" id="button-group">
-                        <a href="home.html"><button class="btn btn-danger m-2">← Home</button></a>
+                        <a href="index.php"><button class="btn btn-danger m-2">← Home</button></a>
                         <a href="#cart"><button class="btn btn-danger m-2">Cart</button></a>
                         <!-- <a href="#cart"><button class="btn btn-danger m-2">Confirm</button></a> -->
                 </div>
@@ -432,11 +432,11 @@ if (isset($_GET["action"])) {
         <div class="table-responsive">
                 <table class="table table-bordered">
                         <tr>
-                                <th width="40%">Item Name</th>
-                                <th width="10%">Quantity</th>
-                                <th width="20%">Price</th>
-                                <th width="15%">Total</th>
-                                <th width="5%"> </th>
+                                <th width="40%" class="p-p">Item Name</th>
+                                <th width="10%" class="p-p">Quantity</th>
+                                <th width="20%"class="p-p">Price</th>
+                                <th width="15%"class="p-p">Total</th>
+                                <th width="5%"class="p-p"> </th>
                         </tr>
                         <?php
                         if (!empty($_SESSION["shopping_cart"])) {
@@ -444,12 +444,12 @@ if (isset($_GET["action"])) {
                                 foreach ($_SESSION["shopping_cart"] as $keys => $values) {
                                         ?>
                                         <tr>
-                                                <td><?php echo $values["item_name"]; ?></td>
-                                                <td><?php echo $values["item_quantity"]; ?></td>
-                                                <td>Rs <?php echo number_format(floatval($values["item_price"]), 2); ?></td>
-                                                <td>Rs <?php echo number_format(intval($values["item_quantity"]) * floatval($values["item_price"]), 2); ?>
+                                                <td class="p-p"><?php echo $values["item_name"]; ?></td>
+                                                <td class="p-p"><?php echo $values["item_quantity"]; ?></td>
+                                                <td class="p-p">Rs <?php echo number_format(floatval($values["item_price"]), 2); ?></td>
+                                                <td class="p-p">Rs <?php echo number_format(intval($values["item_quantity"]) * floatval($values["item_price"]), 2); ?>
                                                 </td>
-                                                <td><a href="menu.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
+                                                <td class="p-p"><a href="menu.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
                                                                         class="text-danger">Remove</span></a></td>
                                         </tr>
                                         <?php
@@ -457,8 +457,8 @@ if (isset($_GET["action"])) {
                                 }
                                 ?>
                                 <tr>
-                                        <td colspan="3" align="right">Total</td>
-                                        <td align="right">Rs <?php echo number_format($total, 2); ?></td>
+                                        <td colspan="3" align="right" class="p-p">Total</td>
+                                        <td align="right" class="p-p">Rs <?php echo number_format($total, 2); ?></td>
                                         <td></td>
                                 </tr>
                                 <?php
