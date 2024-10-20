@@ -1,73 +1,124 @@
 import ballerina/http;
 
-service / on new http:Listener(8080) {
+// Declare the shopping cart as a map globally
+map<json> shoppingCart = {};
 
-    // Resource to handle form submissions
-    resource function post selections(http:Caller caller, http:Request req) returns error? {
-        // Retrieve form data from POST request
-        map<string|string[]> formData = check req.getFormParams();
+service /shoppingCart on new http:Listener(8080) {
 
-        // Initialize response string
-        string htmlResponse = "<html><body>";
+    // Endpoint to add an item to the cart
+    resource function post addToCart(http:Caller caller, http:Request req) returns error? {
+        // Get JSON payload
+        json payload = check req.getJsonPayload();
 
-        // Handle Flavours
-        htmlResponse += "<h2>Flavours</h2>";
+        // Safely extract and cast each value using `cloneWithType()`
+        int itemId = check (check payload.itemId).cloneWithType(int);
+        string itemName = check (check payload.itemName).cloneWithType(string);
+        float itemPrice = check (check payload.itemPrice).cloneWithType(float);
+        int itemQuantity = check (check payload.itemQuantity).cloneWithType(int);
 
-        if formData.hasKey("flavour[]") {
-            var flavourData = formData.get("flavour[]");
-            if (flavourData is string) {
-                htmlResponse += "<p>" + flavourData + "</p>";
-            } else if (flavourData is string[]) {
-                string[] flavours = <string[]>flavourData;
-                if (flavours.length() > 0) {
-                    foreach string flavour in flavours {
-                        htmlResponse += "<p>" + flavour + "</p>";
-                    }
-                } else {
-                    htmlResponse += "<p>No flavours selected.</p>";
-                }
-            }
-        } else {
-            htmlResponse += "<p>Flavour data not received.</p>";
-        }
+        // Add or update the cart with the item
+        json cartItem = {
+            "itemId": itemId,
+            "itemName": itemName,
+            "itemPrice": itemPrice,
+            "itemQuantity": itemQuantity
+        };
 
-        // Handle Toppings
-        htmlResponse += "<h2>Toppings</h2>";
+        // Update or add the item to the shopping cart map
+        shoppingCart[itemName] = cartItem;
 
-        if formData.hasKey("topping[]") {
-            var toppingData = formData.get("topping[]");
-            if (toppingData is string) {
-                htmlResponse += "<p>" + toppingData + "</p>";
-            } else if (toppingData is string[]) {
-                string[] toppings = <string[]>toppingData;
-                if (toppings.length() > 0) {
-                    foreach string topping in toppings {
-                        htmlResponse += "<p>" + topping + "</p>";
-                    }
-                } else {
-                    htmlResponse += "<p>No toppings selected.</p>";
-                }
-            }
-        } else {
-            htmlResponse += "<p>Toppings data not received.</p>";
-        }
+        // Respond with success
+        check caller->respond("Item added to cart successfully");
 
-        htmlResponse += "</body></html>";
-
-        // Create the response object
-        http:Response res = new;
-        res.setPayload(htmlResponse);
-        res.setHeader("Content-Type", "text/html");
-
-        // Send the response back to the client
-        check caller->respond(res);
+        return ();
     }
 
-    // Resource to handle requests for /favicon.ico to prevent errors
-    resource function get favicon(http:Caller caller, http:Request req) returns error? {
-        // Create a 204 No Content response for favicon requests
-        http:Response res = new;
-        res.statusCode = 204; // 204 No Content, as we are not returning a favicon
-        check caller->respond(res);
+    // Endpoint to remove an item from the cart
+    resource function post deleteItem(http:Caller caller, http:Request req) returns error? {
+        // Get JSON payload
+        json payload = check req.getJsonPayload();
+
+        // Safely extract itemName from JSON
+        string itemName = check (check payload.itemName).cloneWithType(string);
+
+        if shoppingCart.hasKey(itemName) {
+            json _ = shoppingCart.remove(itemName);
+            check caller->respond("Item removed from cart successfully");
+        } else {
+            check caller->respond("Item not found in cart");
+        }
+
+        return ();
+    }
+
+    // Endpoint to retrieve cart details
+    resource function get cartDetails(http:Caller caller, http:Request req) returns error? {
+        json cartItems = shoppingCart.toJson();
+        check caller->respond(cartItems);
+
+        return ();
     }
 }
+
+// import ballerina/http;
+
+// Declare the shopping cart as a map globally
+// map<json> shoppingCart = {};
+
+service /shoppingCart on new http:Listener(8080) {
+
+    // Endpoint to add an item to the cart
+    resource function post addToCart(http:Caller caller, http:Request req) returns error? {
+        // Get JSON payload
+        json payload = check req.getJsonPayload();
+
+        // Safely extract and cast each value using `cloneWithType()`
+        int itemId = check (check payload.itemId).cloneWithType(int);
+        string itemName = check (check payload.itemName).cloneWithType(string);
+        float itemPrice = check (check payload.itemPrice).cloneWithType(float);
+        int itemQuantity = check (check payload.itemQuantity).cloneWithType(int);
+
+        // Add or update the cart with the item
+        json cartItem = {
+            "itemId": itemId,
+            "itemName": itemName,
+            "itemPrice": itemPrice,
+            "itemQuantity": itemQuantity
+        };
+
+        // Update or add the item to the shopping cart map
+        shoppingCart[itemName] = cartItem;
+
+        // Respond with success
+        check caller->respond("Item added to cart successfully");
+
+        return ();
+    }
+
+    // Endpoint to remove an item from the cart
+    resource function post deleteItem(http:Caller caller, http:Request req) returns error? {
+        // Get JSON payload
+        json payload = check req.getJsonPayload();
+
+        // Safely extract itemName from JSON
+        string itemName = check (check payload.itemName).cloneWithType(string);
+
+        if shoppingCart.hasKey(itemName) {
+            json _ = shoppingCart.remove(itemName);
+            check caller->respond("Item removed from cart successfully");
+        } else {
+            check caller->respond("Item not found in cart");
+        }
+
+        return ();
+    }
+
+    // Endpoint to retrieve cart details
+    resource function get cartDetails(http:Caller caller, http:Request req) returns error? {
+        json cartItems = shoppingCart.toJson();
+        check caller->respond(cartItems);
+
+        return ();
+    }
+}
+

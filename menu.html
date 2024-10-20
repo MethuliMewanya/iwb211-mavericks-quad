@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container text-center mt-5">
-        <form action="http://localhost:8080/selections" method="post">
+        <form action="cartn.php" method="post">
                 <h1 class="flavour-title" id="flav">Flavours</h1>
                 <div class="row mt-4">
                         <div class="col-4 col-md-3 mb-4"  id="flavour-container">
@@ -114,6 +114,7 @@
                                 <img src="./images/flavours/rr.jpg" alt="Rum Raisin" class="circle-img">
                                 <p class="p-p">Rum Raisin</p>
                                 <p class="p-p">Rs 250/scoop</p>
+                                <!-- <input type="hidden" name="flavour[]"> -->
                                 <div class="custom-button">
                                         <svg onclick="decreaseValue(this)" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M19 13H5v-2h14v2z"></path>
@@ -185,11 +186,16 @@
                                 <label style="font-family: cursive; font-size: 20px; color: #fff;">Add</label>
                         </div>
                 </div>
+                <div class="d-flex justify-content-between mt-4" id="button-group">
+                        <a href="home.html"><button class="btn btn-danger m-2">← Home</button></a>
+                        <!-- <a href="toppings.html#flav"><button class="btn btn-danger m-2">Cart</button></a> -->
+                         <input type="submit" value="Cart" >
+                </div>
         </form>
-        <div class="d-flex justify-content-between mt-4" id="button-group">
+        <!-- <div class="d-flex justify-content-between mt-4" id="button-group">
                 <a href="home.html"><button class="btn btn-danger m-2">← Home</button></a>
                 <a href="toppings.html#flav"><button class="btn btn-danger m-2">Cart</button></a>
-        </div>
+        </div> -->
    </div>
 
    <script>
