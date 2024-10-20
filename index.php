@@ -14,9 +14,9 @@
         </div>
         <h4 class="line-1">Come scoop up happiness!</h4>
         <div class="button-group mt-4">
-            <a href="home.php#flav"><button class="btn btn-danger m-2">+ Add flavourrs</button></a>
-            <a href="home.php#topp"><button class="btn btn-danger m-2">+ Add topping</button></a><br>
-            <a href="home.php#cart"><button class="btn btn-danger m-2">View cart</button></a>
+            <a href="menu.php#flav"><button class="btn btn-danger m-2">+ Add flavourrs</button></a>
+            <a href="menu.php#topp"><button class="btn btn-danger m-2">+ Add topping</button></a><br>
+            <a href="menu.php#cart"><button class="btn btn-danger m-2">View cart</button></a>
         </div>
         <div class="info-section mt-5">
             <div class="video-container">  
@@ -24,5 +24,8 @@
             </div>
         </div>
     </div>
+    <?php
+        // put your code here
+    ?>
 </body>
 </html>

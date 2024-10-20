@@ -30,7 +30,7 @@ if (isset($_POST["add_to_cart"])) {
 
 if(isset($_POST["abort"])){
         session_destroy();
-        echo '<script>window.location="home.html"</script>';
+        echo '<script>window.location="index.php"</script>';
 }
 
 if (isset($_GET["action"])) {
@@ -38,7 +38,7 @@ if (isset($_GET["action"])) {
                 foreach ($_SESSION["shopping_cart"] as $keys => $values) {
                         if ($values["item_id"] == $_GET["id"]) {
                                 unset($_SESSION["shopping_cart"][$keys]);
-                                echo '<script>window.location="home.php"</script>';
+                                echo '<script>window.location="menu.php"</script>';
                         }
                 }
         }
@@ -73,7 +73,7 @@ if (isset($_GET["action"])) {
                 <div class="d-flex justify-content-between mt-4" id="button-group">
                         <!-- <a href="home.html"><button class="btn btn-danger m-2">← Home</button></a> -->
                         <a href="#"></a><!-- <a href="home.html"><button class="btn btn-danger m-2" onclick="confirm()">Confirm</button></a> -->
-                        <form method="post" action="home.php">
+                        <form method="post" action="menu.php">
                         <input type="submit" name="abort" style="margin-top:5px;" class="btn btn-success" value="Confirm" onclick="confirm()"/>
                         </form>
                 </div>
@@ -100,7 +100,7 @@ if (isset($_GET["action"])) {
                 <h1 class="flavour-title" id="flav">Flavours</h1>
                 <div class="row mt-4">
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=1">
+                                <form method="post" action="menu.php?action=add&id=1">
                                         <img src="./images/flavours/c.jpg" alt="Chocolate" class="circle-img">
                                         <p class="p-p">Chocolate</p>
                                         <p class="p-p">Rs 200/scoop</p>
@@ -109,7 +109,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="1" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -124,7 +124,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=2">
+                                <form method="post" action="menu.php?action=add&id=2">
                                         <img src="./images/flavours/v.jpeg" alt="Vanila" class="circle-img">
                                         <p class="p-p">Vanila</p>
                                         <p class="p-p">Rs 200/scoop</p>
@@ -133,7 +133,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="2" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -148,7 +148,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=3">
+                                <form method="post" action="menu.php?action=add&id=3">
                                         <img src="./images/flavours/s.jpeg" alt="Strawberry" class="circle-img">
                                         <p class="p-p">Strawberry</p>
                                         <p class="p-p">Rs 250/scoop</p>
@@ -157,7 +157,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="3" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -172,7 +172,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=4">
+                                <form method="post" action="menu.php?action=add&id=4">
                                         <img src="./images/flavours/mc.jpg" alt="Mint Chocolate Chip"
                                                 class="circle-img">
                                         <p class="p-p">Mint Chocolate Chip</p>
@@ -182,7 +182,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="4" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -197,7 +197,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=5">
+                                <form method="post" action="menu.php?action=add&id=5">
                                         <img src="./images/flavours/cc.jpg" alt="Cookies n' Cream" class="circle-img">
                                         <p class="p-p">Cookies n' Cream</p>
                                         <p class="p-p">Rs 250/scoop</p>
@@ -206,7 +206,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="5" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -221,7 +221,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=6">
+                                <form method="post" action="menu.php?action=add&id=6">
                                         <img src="./images/flavours/bs.jpg" alt="Butterscotch" class="circle-img">
                                         <p class="p-p">Butterscotch</p>
                                         <p class="p-p">Rs 250/scoop</p>
@@ -230,7 +230,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="6" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -245,7 +245,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=7">
+                                <form method="post" action="menu.php?action=add&id=7">
                                         <img src="./images/flavours/sc.jpeg" alt="Strawberry Cheesecake"
                                                 class="circle-img">
                                         <p class="p-p">Strawberry Cheesecake</p>
@@ -255,7 +255,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="7" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -270,7 +270,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4" id="flavour-container">
-                                <form method="post" action="home.php?action=add&id=8">
+                                <form method="post" action="menu.php?action=add&id=8">
                                         <img src="./images/flavours/rr.jpg" alt="Rum Raisin" class="circle-img">
                                         <p class="p-p">Rum Raisin</p>
                                         <p class="p-p">Rs 250/scoop</p>
@@ -279,7 +279,7 @@ if (isset($_GET["action"])) {
                                                         fill="currentColor">
                                                         <path d="M19 13H5v-2h14v2z"></path>
                                                 </svg>
-                                                <span class="counter">1</span>
+                                                <span class="counter">0</span>
                                                 <svg onclick="increaseValue(this)" data-id="8" viewBox="0 0 24 24"
                                                         fill="currentColor">
                                                         <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2z"></path>
@@ -298,7 +298,7 @@ if (isset($_GET["action"])) {
                 <h1 class="flavour-title" id="topp">Toppings</h1>
                 <div class="row mt-4">
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=9">
+                                <form method="post" action="menu.php?action=add&id=9">
                                         <img src="./images/toppings/sp.jpeg" alt="Sprinkles" class="circle-img">
                                         <p class="p-p">Sprinkles</p>
                                         <p class="p-p">Rs 50</p>
@@ -311,7 +311,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=10">
+                                <form method="post" action="menu.php?action=add&id=10">
                                         <img src="./images/toppings/hot.jpg" alt="Hot Fudge" class="circle-img">
                                         <p class="p-p">Hot Fudge</p>
                                         <p class="p-p">Rs 50</p>
@@ -324,7 +324,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=11">
+                                <form method="post" action="menu.php?action=add&id=11">
                                         <img src="./images/toppings/ch.jpeg" alt="Maraschino Cherries"
                                                 class="circle-img">
                                         <p class="p-p">Maraschino Cherries</p>
@@ -338,7 +338,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=12">
+                                <form method="post" action="menu.php?action=add&id=12">
                                         <img src="./images/toppings/wh.jpeg" alt="Whipped Cream" class="circle-img">
                                         <p class="p-p">Whipped Cream</p>
                                         <p class="p-p">Rs 50</p>
@@ -351,7 +351,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=13">
+                                <form method="post" action="menu.php?action=add&id=13">
                                         <img src="./images/toppings/nuts.jpg" alt="Crushed Nuts" class="circle-img">
                                         <p class="p-p">Crushed Nuts</p>
                                         <p class="p-p">Rs 50</p>
@@ -364,7 +364,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=14">
+                                <form method="post" action="menu.php?action=add&id=14">
                                         <img src="./images/toppings/oreo.jpg" alt="Crushed Oreo" class="circle-img">
                                         <p class="p-p">Crushed Oreo</p>
                                         <p class="p-p">Rs 70</p>
@@ -377,7 +377,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=15">
+                                <form method="post" action="menu.php?action=add&id=15">
                                         <img src="./images/toppings/brownie.jpg" alt="Brownie Bites" class="circle-img">
                                         <p class="p-p">Brownie Bites</p>
                                         <p class="p-p">Rs 100</p>
@@ -390,7 +390,7 @@ if (isset($_GET["action"])) {
                                 </form>
                         </div>
                         <div class="col-4 col-md-3 mb-4">
-                                <form method="post" action="home.php?action=add&id=16">
+                                <form method="post" action="menu.php?action=add&id=16">
                                         <img src="./images/toppings/gummy.jpg" alt="Gummy Bears" class="circle-img">
                                         <p class="p-p">Gummy Bears</p>
                                         <p class="p-p">Rs 50</p>
@@ -428,7 +428,7 @@ if (isset($_GET["action"])) {
         </script>
         <div style="clear:both"></div>
         <br />
-        <h3 id="cart">Order Details</h3>
+        <h3 id="cart" class="flavour-title">Order Details</h3>
         <div class="table-responsive">
                 <table class="table table-bordered">
                         <tr>
@@ -446,10 +446,10 @@ if (isset($_GET["action"])) {
                                         <tr>
                                                 <td><?php echo $values["item_name"]; ?></td>
                                                 <td><?php echo $values["item_quantity"]; ?></td>
-                                                <td>$ <?php echo number_format(floatval($values["item_price"]), 2); ?></td>
-                                                <td>$ <?php echo number_format(intval($values["item_quantity"]) * floatval($values["item_price"]), 2); ?>
+                                                <td>Rs <?php echo number_format(floatval($values["item_price"]), 2); ?></td>
+                                                <td>Rs <?php echo number_format(intval($values["item_quantity"]) * floatval($values["item_price"]), 2); ?>
                                                 </td>
-                                                <td><a href="home.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
+                                                <td><a href="menu.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span
                                                                         class="text-danger">Remove</span></a></td>
                                         </tr>
                                         <?php
@@ -458,7 +458,7 @@ if (isset($_GET["action"])) {
                                 ?>
                                 <tr>
                                         <td colspan="3" align="right">Total</td>
-                                        <td align="right">$ <?php echo number_format($total, 2); ?></td>
+                                        <td align="right">Rs <?php echo number_format($total, 2); ?></td>
                                         <td></td>
                                 </tr>
                                 <?php
