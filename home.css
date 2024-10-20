@@ -24,16 +24,32 @@ body {
     padding-top: 20px;
     justify-content: center;
     color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+
+@keyframes line-1 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.line-1 {
+    animation: line-1 1s infinite;
 }
 
 .button-group .btn {
-    width: 150px;
+    width: 200px;
     font-size: 18px;
     border-radius: 25px; 
     color: #fff; 
     background-color: transparent; 
     border-color: #fff; 
     outline: none;
+    box-shadow: 4px 4px 10px rgba(247, 247, 247, 0.5);
+}
+
+.btn-danger {
+    text-shadow: 4px 4px 8px #000000;
 }
 
 .btn:hover {
@@ -58,13 +74,14 @@ body {
 }
 
 .info-text {
-    font-size: 18px;
+    font-size: 20px;
     font-family: cursive;
     font-weight: 500;
     padding-top: 30px;
     padding-bottom: 20px;
     justify-content: center;
     color: #fff;
+    text-shadow: 0 0 5px #f8f8f8, 0 0 10px #f0044b, 0 0 20px #f0044b;
 }
 
 .video-container {

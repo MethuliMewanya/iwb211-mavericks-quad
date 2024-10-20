@@ -9,6 +9,9 @@ body {
 .flavour-title {
     font-weight: bolder;
     font-family: cursive;
+    color: black;
+   /* text-shadow: 0 0 10px #ff0062, 0 0 20px #ff0062, 0 0 30px #ff0062;   */
+    text-shadow: 1px 1px 2px whitesmoke, -1px -1px 2px #5c0622;
 }
 
 .circle-btn {
@@ -38,7 +41,8 @@ button p {
     margin: 0;
     font-size: 18px;
     font-family: cursive;
-    color: #fff;    
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;    
 }
 
 .btn {
@@ -61,7 +65,7 @@ button p {
 
 .btn:hover {
     color: white; 
-    background-color: rgb(233, 60, 89); 
+    background-color: rgb(233,60,89); 
     border-color: rgb(163, 33, 55); 
 }
 
@@ -105,3 +109,4 @@ button p {
 #button-group{
     margin: 15px;
 }
+
