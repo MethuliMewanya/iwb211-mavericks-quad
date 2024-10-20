@@ -426,7 +426,7 @@ if (isset($_GET["action"])) {
                         document.getElementById('quantity-' + itemId).value = currentValue;
                 }
         </script>
-        <div style="clear:both"></div>
+        <div style="clear:both; padding: bottom 200px;"></div>
         <br />
         <h3 id="cart" class="flavour-title">Order Details</h3>
         <div class="table-responsive">
